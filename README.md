@@ -7,11 +7,21 @@ Um app para adição, remoção e organização de tarefas, com tema escuro e cl
 As tecnologias usadas foram:
 
 <p align="center" justify-content="center">
-<img src="./src/assets/html.png" width="50">
+<img src="./src/assets/html.png" width="60">
 <img src="./src/assets/css.png" width="60"/>
 <img src="./src/assets/JavaScript.png" width="56"/>
-<img src="./src/assets/vue.png" width="70"/>
+<img src="./src/assets/vue.png" width="60"/>
 </p>
+
+<p>&nbsp;</p>
+
+O projeto fica assim: 😉
+
+<br/>
+
+<img src="./src/assets/active-states-light.jpg"/>
+
+<br/>
 
 ## Instalação do projeto
 
