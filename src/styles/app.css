@@ -1,19 +1,20 @@
 @import url("https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@400;700&display=swap");
 
 :root {
+  --cyan: #55ddff;
+  --purple: #c058f3;
   --blue: #3a7bfd;
-  --light: #fafafa;
-  --light-grey: #e4e5f1;
-  --grey: #9394a5;
-  --greyed-out: #4d5066;
-  --greyed-out-light: #9394a5;
+  --white-100: #fff;
+  --gray-100: #fafafa;
+  --gray-200: #e4e5f1;
+  --gray-500: #9394a5;
+  --gray-700: #4d5066;
   --shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
 }
 
 [data-theme="light"] {
   --greyed-out: #4d5066;
   --greyed-out-light: #9394a5;
-  --color: #000;
   --color-input: #34364c;
   --color-h4: #9394a5;
   --light-input: #fff;
@@ -22,13 +23,11 @@
   --secondary-color: #818cab;
   --font-color: #000;
   --bg-color: #161625;
-  --heading-color: #818cab;
 }
 
 [data-theme="dark"] {
   --greyed-out: #fff;
   --greyed-out-light: #fff;
-  --color: #fafafa;
   --font-color: #161722;
   --color-input: #34364c;
   --color-h4: #9394a5;
@@ -38,7 +37,6 @@
   --secondary-color: #818cab;
   --font-color: #e1e1ff;
   --bg-color: #161625;
-  --heading-color: #818cab;
 }
 
 * {
@@ -103,7 +101,7 @@ h4 {
 
 .top-section .title,
 .top-section .title input {
-  color: #fafafa;
+  color: var(--gray-100);
   font-size: rem;
   font-weight: 700;
   letter-spacing: 0.7rem;
@@ -111,8 +109,7 @@ h4 {
 
 .create-todo {
   font-size: 1.125rem;
-  color: var(--color-input);
-  /* var(--dark-input); */
+  color: var(--font-color);
   margin-top: 50px;
   border-radius: 0.2rem;
   padding: 1rem 1.5rem;
@@ -125,7 +122,7 @@ h4 {
   height: 70px;
   font-size: 1.125rem;
   padding: 1rem 1.5rem;
-  color: var(--color-input);
+  color: var(--font-color);
   background-color: var(--light-input);
   border-radius: 0.2rem;
   box-shadow: var(--shadow);
@@ -133,7 +130,7 @@ h4 {
 }
 
 .create-todo input[type="text"]::placeholder {
-  color: var(--color);
+  color: var(--font-color);
   font-size: 1.125rem;
 }
 
@@ -167,7 +164,7 @@ h4 {
 
 .check-mark:hover,
 .check-mark.checked {
-  background: linear-gradient(130deg, #55ddff 0%, #c058f3 100%);
+  background: linear-gradient(130deg, var(--cyan) 0%, var(--purple) 100%);
 }
 
 .check-mark:hover img,
@@ -179,7 +176,7 @@ h4 {
   width: 25px;
   height: 25px;
   border-radius: 50%;
-  border: 1px solid var(--light-grey);
+  border: 1px solid var(--gray-200);
   cursor: pointer;
   transition: all 0.25s;
   display: flex;
@@ -262,8 +259,8 @@ h4 {
 .todo-items-info {
   height: 60px;
   width: 100%;
-  color: var(--greyed-out);
-  color: var(--greyed-out-light);
+  background-color: var(--light-input);
+  color: var(--gray-500);
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -289,4 +286,28 @@ h4 {
 .items-clear {
   cursor: pointer;
   text-align: end;
+}
+
+.no-tasks {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 12rem;
+  font-size: 18px;
+}
+
+@media (max-width: 450px) {
+  .todo-items-info {
+    padding: 0 10px;
+    font-size: 10;
+  }
+  .items-left {
+    font-size: 12px;
+  }
+  .item-status {
+    font-size: 12px;
+  }
+  .items-clear {
+    font-size: 12px;
+  }
 }

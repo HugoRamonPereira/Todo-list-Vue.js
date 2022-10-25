@@ -4,6 +4,7 @@
       v-on:keyup.enter="addTodoComponent()"
       type="text"
       id="content"
+      autocomplete="off"
       placeholder="Create new todo..."
       v-model="state.input_content"
     />

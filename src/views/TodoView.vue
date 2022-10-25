@@ -6,7 +6,7 @@
     />
     <InputCreateComponent @addTodo="addTodo" />
 
-    <section class="todo-list">
+    <section class="todo-list" v-if="state.todos.length > 0">
       <TableComponent
         @removedTodo="removedTodo"
         @checkedTodo="checkedTodo"
@@ -22,6 +22,9 @@
         @allCompleted="allCompleted"
         @cleaCompleted="cleaCompleted"
       />
+    </section>
+    <section v-else>
+      <p class="no-tasks">You don't have any tasks yet!</p>
     </section>
   </main>
 </template>
@@ -55,13 +58,14 @@ export default {
       state.todos = getStorage();
       state.allListClass = true;
       setCustomerTheme(state.changeColorValue);
+      sortsTodos();
     });
 
-    computed(() => {
-      state.todos = todos.sort((a, b) => {
+    function sortsTodos() {
+      state.todos = state.todos.sort((a, b) => {
         return b.createdAt - a.createdAt;
       });
-    });
+    }
 
     const changeColorTheme = () => {
       state.changeColorValue = !state.changeColorValue;
@@ -100,7 +104,7 @@ export default {
         return;
       }
 
-      state.todos.push({
+      state.todos.unshift({
         content: input_content,
         done: false,
         order: state.todos.length,
